@@ -1,12 +1,14 @@
-# PowerShell Script to Toggle Caps Lock to Keep Windows Active
+# PowerShell Script to Output Current Time to Keep Session Active
 
-# Set the interval between key toggles (in milliseconds)
-$interval = 60000  # 60 seconds
+# Set the interval between time outputs (in seconds)
+$interval = 60  # 60 seconds
 
-# Loop to toggle Caps Lock at the defined interval
+# Loop to output the current time at the defined interval
 while ($true) {
-    # Simulate pressing Caps Lock key
-    [console]::CapsLock = !$([console]::CapsLock)
+    # Output the current time
+    $currentTime = Get-Date
+    Write-Output "Current time: $currentTime"
+
     # Wait for the defined interval
-    Start-Sleep -Milliseconds $interval
+    Start-Sleep -Seconds $interval
 }
